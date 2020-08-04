@@ -1,0 +1,23 @@
+nav {
+    display: inline-block;
+}
+
+nav a:link {
+    color: black;
+}
+
+nav .page-item {
+    box-shadow: none;
+}
+
+.page-item.active .page-link {
+    color: black;
+    background-color: #E6E6E6;
+    border-color: #E6E6E6;
+}
+
+.page-item.active .page-link {
+    color: black;
+    background-color: #E6E6E6;
+    border-color: #E6E6E6;
+}

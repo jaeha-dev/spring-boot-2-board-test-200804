@@ -1,0 +1,11 @@
+html * {
+    font-family: 'NanumSquare', sans-serif !important;
+    font-weight: 400 !important;
+    /* 300(light), 400(normal), 700(bold), 800(bolder) */
+}
+
+h3, h5 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

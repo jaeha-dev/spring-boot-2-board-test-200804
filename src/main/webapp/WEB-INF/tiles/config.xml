@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- 기본 페이지 레이아웃 -->
+    <definition name="defaultLayout" template="/WEB-INF/views/fragment/layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/fragment/header.jsp"/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/fragment/footer.jsp"/>
+    </definition>
+
+    <!-- 폼 페이지 레이아웃 -->
+    <definition name="formLayout" template="/WEB-INF/views/fragment/layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/fragment/header.jsp"/>
+        <put-attribute name="content" value=""/>
+    </definition>
+
+    <!-- posts/save, posts/update 페이지에서 Footer를 제외한다. -->
+    <definition name="posts/*" extends="formLayout">
+        <put-attribute name="content" value="/WEB-INF/views/post/{1}.jsp"/>
+    </definition>
+
+    <!-- 페이지 패턴 정의 -->
+    <definition name="*" extends="defaultLayout">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp"/>
+    </definition>
+    <definition name="*/*" extends="defaultLayout">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+    </definition>
+    <definition name="*/*/*" extends="defaultLayout">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
+    </definition>
+
+</tiles-definitions>
